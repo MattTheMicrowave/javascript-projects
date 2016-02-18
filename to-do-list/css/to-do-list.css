@@ -1,0 +1,29 @@
+
+
+/*
+#container {
+
+
+padding-left: 20px;
+background-color: white;
+    background-color: linear-gradient(white, grey);
+width: 100%;
+    height: 100%;
+    
+}
+
+
+this was for the div container but needs more time to use and format due to chrome browser sizing
+*/
+html {
+
+height: 100%;    
+background-image: linear-gradient(to bottom right, white, grey);
+background-repeat: no-repeat;
+}
+
+body {
+
+margin: 30px 0px 0px 50px;
+
+}
