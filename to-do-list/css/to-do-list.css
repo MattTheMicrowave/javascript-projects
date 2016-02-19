@@ -15,11 +15,81 @@ width: 100%;
 
 this was for the div container but needs more time to use and format due to chrome browser sizing
 */
+
+/*the code below is for the freakshow font*/
+
+
+
+@font-face {
+
+font-family: 'freakshow';
+    src: url('../font/Freakshow.ttf');
+
+}
+
+
+/*the code below is for the ransom note font*/
+
+
+@font-face {
+
+font-family: 'ransom';
+    src: url('../font/Got_Heroin.ttf');
+
+}
+
+@font-face {
+
+font-family: 'olde';
+    src: url('../font/Olde.ttf');
+
+}
+
+
+ul {
+
+margin-top: -60px;
+
+}
+.addbutton {
+
+font-size: 20px;
+
+}
+li {
+
+color: white;
+font-family: 'freakshow';
+    font-size: 20px;
+}
+#onlyform {
+
+color: white;
+font-family: 'freakshow';
+    font-size: 30px;
+}
+h1 {
+
+font-family: 'freakshow';
+    font-size: 4em;
+    color: white;
+}
+h2 {
+    font-family: 'freakshow';
+    font-size: 3em;
+color: white;
+}
+
+
 html {
 
 height: 100%;    
+/*
 background-image: linear-gradient(to bottom right, white, grey);
 background-repeat: no-repeat;
+*/
+    
+    background-color: black;
 }
 
 body {
