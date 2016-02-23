@@ -1,0 +1,5 @@
+"use strict";
+
+var name = "Bill Clinton";
+console.log(name);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsSUFBTSxJQUFJLEdBQUcsY0FBYyxDQUFDO0FBQzVCLE9BQU8sQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLENBQUMiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBuYW1lID0gXCJCaWxsIENsaW50b25cIjtcbmNvbnNvbGUubG9nKG5hbWUpOyJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

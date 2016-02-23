@@ -1,4 +1,7 @@
-//to create a slideshow an array must be created from which the slideshow will access images the code below creates an array with images
+//feb23-16 - i have this script written in the html file, and it is functional on http://www.khmertuktuk.com, when i first tried to use an external js file it was not functional, i will revisit this and troubleshoot later 
+
+
+//to create a slideshow an array must be created from which the slideshow will access images - the code below creates an array with images
 
 var image = new Array("../img/test1.jpg", "../img/test2.jpg", "../img/test3.jpg");
 
@@ -24,14 +27,16 @@ function change_image(num) {
     
     };
     
-    // the code below sets the array to the last image of the array once the first image has been passed in the opposite direction
+    // the code below sets the var image_number to the last image of the array once the first image has been passed in the opposite direction
     
     if (image_number < 0) {
     
     image_number = image_length;
     };
 
-    // the code below accesses the html image element and sets its source attribute, src, to the image at the present 'image_number' index of the 'image' array, therefore to adjust the code for your use you will have to replace "img-div" with the id (or class) of you html img element hosting your slideshow
+    // the code below accesses the html image element and sets its source attribute, src, to the image at the present 'image_number' index of the 'image' array, therefore to adjust the code for your use you will have to replace "img-div" with the id (or class) of your html img element hosting your slideshow. my specific element is id 'img-div', as set in the html file line 77.
+//Additionally, pay attention to how the js script is called and executed upon click of the id 'next', and 'previous' buttons    
+    
     
     document.getElementById("img-div").src = image[image_number];
     
