@@ -1,0 +1,61 @@
+// this is a test to make sure the gulp files are set up correctly
+
+"use strict";
+
+var name = "Bill Clinton";
+console.log(name);
+
+/* this selects the button, of class .addbutton and will execute a function after clicking the button */
+
+document.querySelector('.addbutton').addEventListener("click", function (event) {
+
+    /* this defines the variables oldlist which identifies the ul, newli, whcih creates a new li, and newspan which creates a new span element */
+    var oldlist = document.querySelector('ul');
+
+    var newli = document.createElement('li');
+
+    var newspan = document.createElement('span');
+
+    /* this grabs the text entered into the textbox of class .stringentry and enters it as the text that will be within the newspan element */
+    newspan.textContent = document.querySelector('.stringentry').value;
+
+    /* this appends a new li to the ul */
+    oldlist.appendChild(newli);
+
+    /* this creates a new input, newbox, within the document */
+    var newbox = document.createElement('input');
+
+    /* this defines the newbox, new input, as a checkbox */
+    newbox.setAttribute('type', 'checkbox');
+
+    /* this appends the newbox input to the new li */
+    newli.appendChild(newbox);
+
+    /* this executes a function upon clicking of the checkbox that will find the span of the parentnode, (or parent element) of the checked box, then find the span within it and either crossout the text within the neighboring span, or restore it to normal, contigent upon the check box being checked or not */
+
+    /* this finds a check box */
+    newbox.addEventListener('click', function () {
+
+        /* this finds the target span of the targeted checkbox and assigns the contained text to the variable crossouttext */
+        var crossouttext = newbox.parentNode.querySelector('span');
+
+        /* this crosses out the targeted text if the preceeding textbox is checked and restores it to normal if the proceeding checkbox is unchecked */
+        if (newbox.checked) {
+
+            crossouttext.style.textDecoration = 'line-through';
+        } else {
+
+            crossouttext.style.textDecoration = 'none';
+        }
+    });
+
+    event.preventDefault();
+
+    /* this appends the newspan, with the containing text to a li which was appended previously to the ul */
+    newli.appendChild(newspan);
+
+    /* this clears the textbox after successful execution of the addition of a new item to the list */
+
+    document.querySelector('.stringentry').value = '';
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LWZpbmFsLXByb2plY3Qtbm92MTMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUVBLElBQU0sSUFBSSxHQUFHLGNBQWMsQ0FBQztBQUM1QixPQUFPLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxDQUFDOzs7O0FBSWxCLFFBQVEsQ0FBQyxhQUFhLENBQUMsWUFBWSxDQUFDLENBQUMsZ0JBQWdCLENBQUMsT0FBTyxFQUFFLFVBQVMsS0FBSyxFQUFFOzs7QUFHL0UsUUFBTSxPQUFPLEdBQUksUUFBUSxDQUFDLGFBQWEsQ0FBQyxJQUFJLENBQUMsQ0FBQzs7QUFFOUMsUUFBTSxLQUFLLEdBQUcsUUFBUSxDQUFDLGFBQWEsQ0FBQyxJQUFJLENBQUMsQ0FBQzs7QUFFM0MsUUFBTSxPQUFPLEdBQUcsUUFBUSxDQUFDLGFBQWEsQ0FBQyxNQUFNLENBQUMsQ0FBQzs7O0FBRy9DLFdBQU8sQ0FBQyxXQUFXLEdBQUcsUUFBUSxDQUFDLGFBQWEsQ0FBQyxjQUFjLENBQUMsQ0FBQyxLQUFLLENBQUM7OztBQUduRSxXQUFPLENBQUMsV0FBVyxDQUFDLEtBQUssQ0FBQyxDQUFDOzs7QUFHM0IsUUFBTSxNQUFNLEdBQUcsUUFBUSxDQUFDLGFBQWEsQ0FBQyxPQUFPLENBQUMsQ0FBQzs7O0FBRy9DLFVBQU0sQ0FBQyxZQUFZLENBQUMsTUFBTSxFQUFDLFVBQVUsQ0FBQyxDQUFDOzs7QUFHdkMsU0FBSyxDQUFDLFdBQVcsQ0FBQyxNQUFNLENBQUMsQ0FBQzs7Ozs7QUFLMUIsVUFBTSxDQUFDLGdCQUFnQixDQUFDLE9BQU8sRUFBRSxZQUFNOzs7QUFHdkMsWUFBTSxZQUFZLEdBQUcsTUFBTSxDQUFDLFVBQVUsQ0FBQyxhQUFhLENBQUMsTUFBTSxDQUFDLENBQUM7OztBQUd6RCxZQUFJLE1BQU0sQ0FBQyxPQUFPLEVBQUU7O0FBRXBCLHdCQUFZLENBQUMsS0FBSyxDQUFDLGNBQWMsR0FBRyxjQUFjLENBQUM7U0FHbEQsTUFHSTs7QUFHTCx3QkFBWSxDQUFDLEtBQUssQ0FBQyxjQUFjLEdBQUcsTUFBTSxDQUFDO1NBRTFDO0tBQ0osQ0FBQyxDQUFDOztBQUVILFNBQUssQ0FBQyxjQUFjLEVBQUUsQ0FBQzs7O0FBR3ZCLFNBQUssQ0FBQyxXQUFXLENBQUMsT0FBTyxDQUFDLENBQUM7Ozs7QUFJM0IsWUFBUSxDQUFDLGFBQWEsQ0FBQyxjQUFjLENBQUMsQ0FBQyxLQUFLLEdBQUcsRUFBRSxDQUFDO0NBTWpELENBQUMsQ0FBQyIsImZpbGUiOiJpbmRleC1maW5hbC1wcm9qZWN0LW5vdjEzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gdGhpcyBpcyBhIHRlc3QgdG8gbWFrZSBzdXJlIHRoZSBndWxwIGZpbGVzIGFyZSBzZXQgdXAgY29ycmVjdGx5XG5cbmNvbnN0IG5hbWUgPSBcIkJpbGwgQ2xpbnRvblwiO1xuY29uc29sZS5sb2cobmFtZSk7XG5cbi8qIHRoaXMgc2VsZWN0cyB0aGUgYnV0dG9uLCBvZiBjbGFzcyAuYWRkYnV0dG9uIGFuZCB3aWxsIGV4ZWN1dGUgYSBmdW5jdGlvbiBhZnRlciBjbGlja2luZyB0aGUgYnV0dG9uICovXG5cbmRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJy5hZGRidXR0b24nKS5hZGRFdmVudExpc3RlbmVyKFwiY2xpY2tcIiwgZnVuY3Rpb24oZXZlbnQpIHtcbiAgICBcbi8qIHRoaXMgZGVmaW5lcyB0aGUgdmFyaWFibGVzIG9sZGxpc3Qgd2hpY2ggaWRlbnRpZmllcyB0aGUgdWwsIG5ld2xpLCB3aGNpaCBjcmVhdGVzIGEgbmV3IGxpLCBhbmQgbmV3c3BhbiB3aGljaCBjcmVhdGVzIGEgbmV3IHNwYW4gZWxlbWVudCAqLyAgICBcbmNvbnN0IG9sZGxpc3QgPSAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigndWwnKTtcblxuY29uc3QgbmV3bGkgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdsaScpO1xuXG5jb25zdCBuZXdzcGFuID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc3BhbicpOyAgIFxuICAgXG4vKiB0aGlzIGdyYWJzIHRoZSB0ZXh0IGVudGVyZWQgaW50byB0aGUgdGV4dGJveCBvZiBjbGFzcyAuc3RyaW5nZW50cnkgYW5kIGVudGVycyBpdCBhcyB0aGUgdGV4dCB0aGF0IHdpbGwgYmUgd2l0aGluIHRoZSBuZXdzcGFuIGVsZW1lbnQgKi8gICAgXG5uZXdzcGFuLnRleHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcignLnN0cmluZ2VudHJ5JykudmFsdWU7XG5cbi8qIHRoaXMgYXBwZW5kcyBhIG5ldyBsaSB0byB0aGUgdWwgKi8gICAgXG5vbGRsaXN0LmFwcGVuZENoaWxkKG5ld2xpKTtcblxuLyogdGhpcyBjcmVhdGVzIGEgbmV3IGlucHV0LCBuZXdib3gsIHdpdGhpbiB0aGUgZG9jdW1lbnQgKi8gICAgXG5jb25zdCBuZXdib3ggPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdpbnB1dCcpO1xuXG4vKiB0aGlzIGRlZmluZXMgdGhlIG5ld2JveCwgbmV3IGlucHV0LCBhcyBhIGNoZWNrYm94ICovICAgIFxubmV3Ym94LnNldEF0dHJpYnV0ZSgndHlwZScsJ2NoZWNrYm94Jyk7XG5cbi8qIHRoaXMgYXBwZW5kcyB0aGUgbmV3Ym94IGlucHV0IHRvIHRoZSBuZXcgbGkgKi8gICAgXG5uZXdsaS5hcHBlbmRDaGlsZChuZXdib3gpO1xuXG4vKiB0aGlzIGV4ZWN1dGVzIGEgZnVuY3Rpb24gdXBvbiBjbGlja2luZyBvZiB0aGUgY2hlY2tib3ggdGhhdCB3aWxsIGZpbmQgdGhlIHNwYW4gb2YgdGhlIHBhcmVudG5vZGUsIChvciBwYXJlbnQgZWxlbWVudCkgb2YgdGhlIGNoZWNrZWQgYm94LCB0aGVuIGZpbmQgdGhlIHNwYW4gd2l0aGluIGl0IGFuZCBlaXRoZXIgY3Jvc3NvdXQgdGhlIHRleHQgd2l0aGluIHRoZSBuZWlnaGJvcmluZyBzcGFuLCBvciByZXN0b3JlIGl0IHRvIG5vcm1hbCwgY29udGlnZW50IHVwb24gdGhlIGNoZWNrIGJveCBiZWluZyBjaGVja2VkIG9yIG5vdCAqLyAgICBcblxuLyogdGhpcyBmaW5kcyBhIGNoZWNrIGJveCAqLyAgICBcbm5ld2JveC5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsICgpID0+IHtcblxuLyogdGhpcyBmaW5kcyB0aGUgdGFyZ2V0IHNwYW4gb2YgdGhlIHRhcmdldGVkIGNoZWNrYm94IGFuZCBhc3NpZ25zIHRoZSBjb250YWluZWQgdGV4dCB0byB0aGUgdmFyaWFibGUgY3Jvc3NvdXR0ZXh0ICovICAgIFxuY29uc3QgY3Jvc3NvdXR0ZXh0ID0gbmV3Ym94LnBhcmVudE5vZGUucXVlcnlTZWxlY3Rvcignc3BhbicpOyAgICBcblxuLyogdGhpcyBjcm9zc2VzIG91dCB0aGUgdGFyZ2V0ZWQgdGV4dCBpZiB0aGUgcHJlY2VlZGluZyB0ZXh0Ym94IGlzIGNoZWNrZWQgYW5kIHJlc3RvcmVzIGl0IHRvIG5vcm1hbCBpZiB0aGUgcHJvY2VlZGluZyBjaGVja2JveCBpcyB1bmNoZWNrZWQgKi8gICAgXG4gICAgaWYgKG5ld2JveC5jaGVja2VkKSB7XG4gICAgXG4gICAgY3Jvc3NvdXR0ZXh0LnN0eWxlLnRleHREZWNvcmF0aW9uID0gJ2xpbmUtdGhyb3VnaCc7XG4gICAgICAgIFxuICAgIFxuICAgIH1cbiAgICBcbiAgICBcbiAgICBlbHNlIHtcbiAgICBcbiAgICBcbiAgICBjcm9zc291dHRleHQuc3R5bGUudGV4dERlY29yYXRpb24gPSAnbm9uZSc7XG4gICAgXG4gICAgfVxufSk7XG5cbmV2ZW50LnByZXZlbnREZWZhdWx0KCk7XG5cbi8qIHRoaXMgYXBwZW5kcyB0aGUgbmV3c3Bhbiwgd2l0aCB0aGUgY29udGFpbmluZyB0ZXh0IHRvIGEgbGkgd2hpY2ggd2FzIGFwcGVuZGVkIHByZXZpb3VzbHkgdG8gdGhlIHVsICovXG5uZXdsaS5hcHBlbmRDaGlsZChuZXdzcGFuKTtcblxuLyogdGhpcyBjbGVhcnMgdGhlIHRleHRib3ggYWZ0ZXIgc3VjY2Vzc2Z1bCBleGVjdXRpb24gb2YgdGhlIGFkZGl0aW9uIG9mIGEgbmV3IGl0ZW0gdG8gdGhlIGxpc3QgKi8gICAgXG4gICAgXG5kb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcuc3RyaW5nZW50cnknKS52YWx1ZSA9ICcnOyBcblxuIFxuICAgXG5cblxufSk7XG5cbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
